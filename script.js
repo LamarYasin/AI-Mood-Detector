@@ -12,7 +12,7 @@ const adviceMap = {
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri("https://justadudewhohacks.github.io/face-api.js/models"),
   faceapi.nets.faceExpressionNet.loadFromUri("https://justadudewhohacks.github.io/face-api.js/models")
-]).then(startVideo);
+]).then(() => console.log("Models loaded!"));
 function startVideo() {
   navigator.mediaDevices.getUserMedia({ video: {} })
     .then(stream => {
